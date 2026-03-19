@@ -70,7 +70,7 @@ export default function Header() {
             >
               <div className="relative shrink-0">                  {/* prevent avatar from shrinking */}
                 <div className="relative h-9 w-9 overflow-hidden rounded-xl shadow-lg transition-all duration-300 group-hover:shadow-rose-400/25 group-hover:shadow-xl">
-                  <Image src="/profile.JPG" alt="Yun Ei Hlaing" fill className="object-cover" sizes="100px" />
+                  <Image src="/my-portfolio/profile.JPG" alt="Yun Ei Hlaing" fill className="object-cover" sizes="100px" />
                 </div>
                 <div className="absolute inset-0 rounded-xl bg-gradient-to-br from-rose-400/20 to-fuchsia-600/20 opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
               </div>
@@ -155,7 +155,7 @@ export default function Header() {
               <div className="border-b border-white/10 p-6">
                 <Link href="/" className="flex items-center gap-3" onClick={() => setIsOpen(false)}>
                   <div className="relative h-10 w-10 overflow-hidden rounded-xl">
-                    <Image src="/profile.JPG" alt="Yun profile" fill className="object-cover" sizes="40px" />
+                    <Image src="/my-portfolio/profile.JPG" alt="Yun profile" fill className="object-cover" sizes="40px" />
                   </div>
                   <div>
                     <div className="font-semibold text-white">Win Thant Tin Han</div>

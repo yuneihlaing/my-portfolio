@@ -33,7 +33,7 @@ export function HeroSection() {
           <div className="relative h-72 md:h-96 rounded-2xl overflow-hidden border border-white/10 bg-white/[0.04] shadow-[0_10px_40px_rgba(0,0,0,.3)]">
             <div className="pointer-events-none absolute inset-0 bg-gradient-to-tr from-rose-400/10 via-transparent to-fuchsia-600/10" />
             <Image
-              src="/coding.gif"
+              src="/my-portfolio/coding.gif"
               alt="Gif"
               fill
               priority
