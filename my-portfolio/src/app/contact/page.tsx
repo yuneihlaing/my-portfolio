@@ -8,7 +8,7 @@ import { Mail, Github, Linkedin } from 'lucide-react';
 import { useEffect } from 'react';
 
 const EMAIL = 'yuneihlaing14@gmail.com';
-const LINKEDIN = 'www.linkedin.com/in/yun-ei-hlaing-b663231ba';
+const LINKEDIN = 'https://linkedin.com/in/yun-ei-hlaing-b663231ba';
 const GITHUB = 'https://github.com/yuneihlaing';
 
 export default function ContactPage() {
