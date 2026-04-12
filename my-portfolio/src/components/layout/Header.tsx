@@ -12,9 +12,6 @@ import Image from "next/image";
 const navItems = [
   { href: "/", label: "Home" },
   { href: "/projects", label: "Projects" },
-  // { href: "/gallery", label: "Gallery" },
-  // { href: "/about", label: "About" },
-  // { href: "/experience", label: "Experience" },
   { href: "/contact", label: "Contact" },
 ];
 
@@ -24,8 +21,6 @@ export default function Header() {
   const pathname = usePathname();
   const { scrollY } = useScroll();
 
-  // NOTE: this intentionally matches the reference (a dark glass header).
-  // We can re-theme later if you want it neutral in light mode.
   const headerBackground = useTransform(
     scrollY,
     [0, 100],
@@ -66,17 +61,23 @@ export default function Header() {
           >
             <Link
               href="/"
-              className="group flex items-center gap-5 min-w-0"   // add min-w-0 so truncation can work
+              className="group flex items-center gap-5 min-w-0"
             >
-              <div className="relative shrink-0">                  {/* prevent avatar from shrinking */}
-                <div className="relative h-9 w-9 overflow-hidden rounded-xl shadow-lg transition-all duration-300 group-hover:shadow-rose-400/25 group-hover:shadow-xl">
-                  <Image src="/my-portfolio/profile.JPG" alt="Yun Ei Hlaing" fill className="object-cover" sizes="100px" />
+              <div className="relative shrink-0">
+                <div className="relative h-9 w-9 overflow-hidden rounded-xl shadow-lg transition-all duration-300 group-hover:shadow-purple-400/25 group-hover:shadow-xl">
+                  <Image
+                    src="/my-portfolio/profile.JPG"
+                    alt="Yun Ei Hlaing"
+                    fill
+                    className="object-cover"
+                    sizes="100px"
+                  />
                 </div>
-                <div className="absolute inset-0 rounded-xl bg-gradient-to-br from-rose-400/20 to-fuchsia-600/20 opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
+                <div className="absolute inset-0 rounded-xl bg-gradient-to-br from-indigo-400/20 to-purple-600/20 opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
               </div>
-              {/* name block */}
-              <div className="hidden sm:flex min-w-0 flex-col">    {/* sm+: show; allow truncation */}
-                <span className="font-semibold text-white group-hover:text-rose-300 whitespace-nowrap truncate max-w-[12rem] lg:max-w-none">
+
+              <div className="hidden sm:flex min-w-0 flex-col">
+                <span className="font-semibold text-white group-hover:text-purple-300 whitespace-nowrap truncate max-w-[12rem] lg:max-w-none">
                   Yun Ei Hlaing
                 </span>
                 <div className="font-mono text-xs text-gray-400 truncate whitespace-nowrap max-w-[12rem] lg:max-w-none">
@@ -84,7 +85,6 @@ export default function Header() {
                 </div>
               </div>
             </Link>
-
           </motion.div>
 
           {/* Desktop nav */}
@@ -99,22 +99,25 @@ export default function Header() {
                 <Link
                   href={item.href}
                   className={`group relative inline-flex items-center whitespace-nowrap
-                              h-9 rounded-lg px-4 text-sm leading-none font-medium
-                              transition-all duration-300 ${
-                                isActive(item.href) ? "text-rose-300" : "text-gray-300 hover:text-white"
-                              }`}
+                    h-9 rounded-lg px-4 text-sm leading-none font-medium
+                    transition-all duration-300 ${
+                      isActive(item.href)
+                        ? "text-white"
+                        : "text-gray-300 hover:text-purple-300"
+                    }`}
                 >
                   {item.label}
+
                   {isActive(item.href) && (
                     <motion.div
-                      className="pointer-events-none absolute inset-0 -z-10 rounded-lg border border-rose-400/20 bg-rose-400/10"
+                      className="pointer-events-none absolute inset-0 -z-10 rounded-lg border border-purple-400/30 bg-purple-500/10"
                       layoutId="activeNav"
                       transition={{ type: "spring", stiffness: 380, damping: 30 }}
                     />
                   )}
-                  <span className="pointer-events-none absolute inset-0 -z-10 rounded-lg bg-white/5 opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
-                </Link>
 
+                  <span className="pointer-events-none absolute inset-0 -z-10 rounded-lg bg-purple-500/10 opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
+                </Link>
               </motion.div>
             ))}
           </nav>
@@ -131,7 +134,7 @@ export default function Header() {
             <Button
               size="lg"
               asChild
-              className="leading-none text-center items-center justify-center bg-gradient-to-r from-rose-400 to-fuchsia-600 text-white shadow-lg hover:from-rose-300 hover:to-fuchsia-600"
+              className="leading-none text-center items-center justify-center bg-gradient-to-r from-indigo-500 via-purple-600 to-fuchsia-600 text-white shadow-lg hover:from-indigo-400 hover:via-purple-500 hover:to-fuchsia-500"
             >
               <Link href="/resume.pdf" target="_blank">
                 Resume <ArrowRight className="ml-1 h-3 w-3" />
@@ -142,24 +145,39 @@ export default function Header() {
           {/* Mobile menu */}
           <Sheet open={isOpen} onOpenChange={setIsOpen}>
             <SheetTrigger asChild className="md:hidden">
-              <Button variant="ghost" size="sm" className="text-gray-300 hover:bg-white/10 hover:text-white">
+              <Button
+                variant="ghost"
+                size="sm"
+                className="text-gray-300 hover:bg-white/10 hover:text-white"
+              >
                 <Menu className="h-5 w-5" />
                 <span className="sr-only">Open menu</span>
               </Button>
             </SheetTrigger>
+
             <SheetContent
               side="right"
               className="w-full max-w-sm border-l border-white/10 bg-gray-900/95 backdrop-blur-xl"
             >
               {/* Mobile header */}
               <div className="border-b border-white/10 p-6">
-                <Link href="/" className="flex items-center gap-3" onClick={() => setIsOpen(false)}>
+                <Link
+                  href="/"
+                  className="flex items-center gap-3"
+                  onClick={() => setIsOpen(false)}
+                >
                   <div className="relative h-10 w-10 overflow-hidden rounded-xl">
-                    <Image src="/my-portfolio/profile.JPG" alt="Yun profile" fill className="object-cover" sizes="40px" />
+                    <Image
+                      src="/my-portfolio/profile.JPG"
+                      alt="Yun profile"
+                      fill
+                      className="object-cover"
+                      sizes="40px"
+                    />
                   </div>
                   <div>
-                    <div className="font-semibold text-white">Win Thant Tin Han</div>
-                    <div className="font-mono text-xs text-gray-400">MSCS @ USC</div>
+                    <div className="font-semibold text-white">Yun Ei Hlaing</div>
+                    <div className="font-mono text-xs text-gray-400">MSAI @ SJSU</div>
                   </div>
                 </Link>
               </div>
@@ -176,14 +194,12 @@ export default function Header() {
                     <Link
                       href={item.href}
                       onClick={() => setIsOpen(false)}
-                      className={`relative flex items-center rounded-xl border p-4 font-medium transition-all duration-500 ${
+                      className={`group relative flex items-center rounded-xl border p-4 font-medium transition-all duration-500 ${
                         isActive(item.href)
-                          ? "border-rose-400/30 bg-gradient-to-r from-rose-400/15 to-fuchsia-600/10 text-rose-300 shadow-lg shadow-rose-400/10"
-                          : "border-transparent text-gray-300 hover:border-white/20 hover:bg-gradient-to-r hover:from-white/10 hover:to-white/5 hover:text-white"
+                          ? "border-purple-400/30 bg-gradient-to-r from-purple-500/20 to-indigo-500/10 text-purple-300 shadow-lg shadow-purple-500/10"
+                          : "border-transparent text-gray-300 hover:border-white/20 hover:bg-gradient-to-r hover:from-purple-500/20 hover:to-indigo-500/10 hover:text-white"
                       }`}
                     >
-                      {/* shimmer */}
-                      <span className="pointer-events-none absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/10 to-transparent transition-transform duration-700 ease-in-out group-hover:translate-x-full" />
                       <span className="relative z-10">{item.label}</span>
                     </Link>
                   </motion.div>
@@ -193,10 +209,10 @@ export default function Header() {
               {/* Mobile footer CTA */}
               <div className="border-t border-white/10 p-6">
                 <Button
-                  className="w-full border-0 bg-gradient-to-r from-rose-400 to-fuchsia-600 text-white hover:from-rose-300 hover:to-fuchsia-600"
+                  className="w-full border-0 bg-gradient-to-r from-indigo-500 via-purple-600 to-fuchsia-600 text-white hover:from-indigo-400 hover:via-purple-500 hover:to-fuchsia-500"
                   asChild
                 >
-                  <Link href="\resume.pdf" target="_blank">
+                  <Link href="/resume.pdf" target="_blank">
                     View Resume
                     <ArrowRight className="ml-2 h-4 w-4" />
                   </Link>

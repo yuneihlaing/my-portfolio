@@ -14,7 +14,7 @@ const ICON_HOVER_SPRING = { type: 'spring' as const, stiffness: 420, damping: 22
 const COLUMNS: ColumnSpec[] = [
   {
     title: 'Languages',
-    tone: 'from-rose-500/25 to-fuchsia-500/25 border-rose-500/30',
+    tone: 'from-indigo-500/20 to-purple-500/20 border-indigo-400/30',
     items: A([
       { src: '/my-portfolio/stack/c.svg', label: 'C' },
       // { src: '/stack/cplusplus.svg', label: 'C++' },
@@ -26,7 +26,7 @@ const COLUMNS: ColumnSpec[] = [
   },
   {
     title: 'Web Stack',
-    tone: 'from-purple-500/25 to-indigo-500/25 border-purple-500/30',
+    tone: 'from-purple-500/20 to-fuchsia-500/20 border-purple-400/30',
     items: A([
       { src: '/my-portfolio/stack/next-js.svg', label: 'Next.js' },
       { src: '/my-portfolio/stack/react.svg', label: 'React' },
@@ -37,7 +37,7 @@ const COLUMNS: ColumnSpec[] = [
   },
   {
     title: 'Databases',
-    tone: 'from-indigo-500/25 to-blue-500/25 border-indigo-500/30',
+    tone: 'from-indigo-600/20 to-blue-500/20 border-indigo-500/30',
     items: A([
       { src: '/my-portfolio/stack/postgresql.svg', label: 'PostgreSQL' },
       { src: '/my-portfolio/stack/mysql.svg', label: 'MySQL' },
@@ -47,7 +47,7 @@ const COLUMNS: ColumnSpec[] = [
   },
   {
     title: 'Infra & Deploy',
-    tone: 'from-blue-500/25 to-sky-500/25 border-blue-500/30',
+    tone: 'from-indigo-500/20 to-violet-500/20 border-indigo-400/30',
     items: A([
       { src: '/my-portfolio/stack/vercel.svg', label: 'Vercel' },
       { src: '/my-portfolio/stack/github-actions.svg', label: 'GitHub Actions' },
@@ -55,7 +55,7 @@ const COLUMNS: ColumnSpec[] = [
   },
   {
     title: 'Data & ML',
-    tone: 'from-sky-500/25 to-cyan-500/25 border-sky-500/30',
+    tone: 'from-purple-600/20 to-indigo-500/20 border-purple-400/30',
     items: A([
       // { src: '/stack/apachespark.svg', label: 'Apache Spark' },
       { src: '/my-portfolio/stack/pandas.svg', label: 'Pandas' },
@@ -66,7 +66,7 @@ const COLUMNS: ColumnSpec[] = [
   },
   {
     title: 'Visualization',
-    tone: 'from-cyan-500/25 to-teal-500/25 border-cyan-500/30',
+    tone: 'from-indigo-500/20 to-purple-600/20 border-indigo-400/30',
     items: A([
       { src: '/my-portfolio/stack/matplotlib.svg', label: 'Matplotlib' },
       { src: '/my-portfolio/stack/seaborn.svg', label: 'Seaborn' },
@@ -173,7 +173,7 @@ export function TechStrip() {
           className="mb-8 text-center"
         >
           <h2 className="text-3xl md:text-4xl font-bold tracking-tight">
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-rose-400 via-pink-500 to-fuchsia-600">
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 via-purple-500 to-fuchsia-600">
               Tools {' '}
             </span>
             I am familiar with
