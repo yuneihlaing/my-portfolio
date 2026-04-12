@@ -21,7 +21,7 @@ export default function ContactPage() {
       <div className="container-max">
         {/* Header */}
         <div className="text-center space-y-3">
-          <Badge className="px-3 py-1 bg-gradient-to-r from-rose-400/10 to-fuchsia-600/10 border-rose-300/20 text-white">
+          <Badge className="px-3 py-1 bg-gradient-to-r from-indigo-500/10 to-purple-600/10 border-indigo-300/20 text-white">
             Contact
           </Badge>
           <h1 className="text-3xl md:text-4xl font-bold tracking-tight">
